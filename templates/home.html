@@ -1,4 +1,33 @@
-<script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
-<h1>Dynamic Page</h1>
-{{.button}}
-<p id="content">This is the initial content</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://unpkg.com/htmx.org@2.0.4"
+      integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="//fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/markdown.css" />
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        document.body.addEventListener("htmx:load", function (evt) {
+          document.querySelectorAll("i").forEach((icon) => {
+            icon.classList.add("material-symbols-rounded");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Heading One <i>home</i></h1>
+    <h2>Heading Two <i>search</i></h2>
+    <h3>Heading Three <i>moped</i></h3>
+    <p>This is a paragraph with a break<br>Here's some Google Material Symbols Rounded Icons: <i>home</i><i>search</i>
+    </p>
+    <button>Hello World</button><br>
+    <input type="search" placeholder="Input with custom cross" size="1000"/>
+  </body>
+</html>

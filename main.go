@@ -3,12 +3,20 @@ package main
 import (
   "github.com/gorilla/mux"
   "net/http"
-  "go-htmx/src/pages"
+  "text/template"
+  "log"
 )
+
+func Homepage(w http.ResponseWriter, r *http.Request) {
+  tmpl, _ := template.ParseFiles("templates/home.html")
+  tmpl.ExecuteTemplate(w, "home.html", nil)
+}
 
 func main() {
   gRouter := mux.NewRouter()
-  gRouter.HandleFunc("/", pages.Homepage)
-  gRouter.HandleFunc("/click", pages.ClickHandler).Methods("GET")
+  assetHandler := http.FileServer(http.Dir("./assets/"))
+  gRouter.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", assetHandler))
+  gRouter.HandleFunc("/", Homepage)
+  log.Println("Server is running on http://localhost")
   http.ListenAndServe(":80", gRouter)
 }
