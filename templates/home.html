@@ -11,15 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/markdown.css" />
-    <script>
-      window.addEventListener("DOMContentLoaded", (event) => {
-        document.body.addEventListener("htmx:load", function (evt) {
-          document.querySelectorAll("i").forEach((icon) => {
-            icon.classList.add("material-symbols-rounded");
-          });
-        });
-      });
-    </script>
+    <script src="assets/style.js"></script>
   </head>
   <body>
     <h1>Heading One <i>home</i></h1>
@@ -30,11 +22,12 @@
       Rounded Icons: <i>home</i><i>search</i>
     </p>
     <button>Hello World</button><br />
-    <input type="search" placeholder="Input with custom cross" size="1000" /><br />
-    <select
-      class="custom-select"
-      style="appearance: none; padding: 16px; border-radius: 20px; font-size: 20px; margin: 4px"
-    >
+    <button>Bob</button><i class="search">search</i><input
+      type="search"
+      placeholder="Input with custom cross"
+      size="1000"
+    /><br />
+    <select>
       <button>
         <selectedcontent></selectedcontent>
       </button>

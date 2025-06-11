@@ -79,3 +79,15 @@ input[type="search"]::-webkit-search-decoration:hover,
 input[type="search"]::-webkit-search-cancel-button:hover {
   background-color: #b0b0b0;
 }
+
+input[type="search"] {
+  padding-left: 48px;
+}
+
+i.search {
+  position: absolute;
+  font-size: 32px;
+  color: #1f1f1f;
+  margin-top: 16px;
+  margin-left: 16px;
+}
